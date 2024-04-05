@@ -22,7 +22,7 @@ const Navbar = () => {
                 <Link href={"/donate"}>Donate</Link>
                 <Link href={"/item/item"}>Bid Items</Link>
                 <Link href={"/"}>Courier</Link>
-                <ConnectWallet/>
+                <w3m-button balance="show" size="sm" />
             </div>
         </div>
     )

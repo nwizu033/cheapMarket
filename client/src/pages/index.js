@@ -7,58 +7,7 @@ import Link from "next/link";
 
 
 export default function Home() {
-  // const client = createThirdwebClient({
-  //   clientId: "9ba50b86c0dc2b49b1ee093b8c6a19f4",
-  // });
-  const { mutateAsync: upload } = useStorageUpload();
-  const [file,setFile] = useState()
-  // const {mutateAsync: upload } = useStorageUpload();
-  const dataToUpload = [file];
 
-  function makeFileObjects () {
-      const obj = {
-      location: `Enugu`, 
-      image: `Tony`,
-      Video: `Mags`,
-   }
-    const blob = new Blob([JSON.stringify(obj)], { type: 'application/json' })
-  
-    const files = [
-      new File([blob], 'metadata.json')
-    ]
-    return files
-  }
-
-  const UploadToIpfs = async() => {
-    const uri = await upload({ data: dataToUpload });
-    console.log("This is uri:", `https://${uri}`);
-    console.log("Extracted cid:", uri);
-    const ipfsUri = uri.toString();
-    const mainUri = ipfsUri.replace('ipfs://', 'https://ipfs.io/ipfs/')
-    console.log("This is main uri:",mainUri);
-  }
-  const UploadMetadatToIpfs = async() => {
-    const obj = {
-      location: `Enugu`, 
-      image: `Tony`,
-      Video: `Mags`,
-   }
-    const metadata = [obj]; 
-    const uri = await upload({ data: metadata });
-    console.log("Extracted cid:", uri);
-    const ipfsUri = uri.toString();
-    const mainUri = ipfsUri.replace('ipfs://', 'https://ipfs.io/ipfs/')
-    console.log("This is main meta uri:",mainUri);
-    console.log("the file",file)
-  }
-  // const UploadToIpfs = async() => {
-  //   const uri = await upload ({
-  //     client,
-  //     files: [file]
-  //   });
-  //   console.log("This is uri:", `https://${uri}`);
-  //   console.log("Extracted cid:", uri);
-  // }
   return (
     <main className="px-[100px]">
       {/* Navbar (sign in/ signup) */}
@@ -67,7 +16,7 @@ export default function Home() {
           <p>CheapMarket</p>
         </div>
         <div className="flex gap-[20px]">
-          <Link className=" text-center rounded-xl py-[8px] w-[100px] bg-gray-500" href={"/registration"}>Sign in</Link>
+          <Link className=" text-center rounded-xl py-[8px] w-[100px] bg-slate-950" href={"/items"}>Sign Items</Link>
           <Link className=" text-center rounded-xl py-[8px] w-[100px] bg-gray-500" href={"/registration"}>Sign up</Link>  
         </div>
       </div>
@@ -164,7 +113,7 @@ export default function Home() {
           <div className="flex flex-col gap-[25px]">
             <p className="text-[20px] font-bold">Enter to win!</p>
             <p className="w-[400px] text-[16px]">Win unique items with CheapMarket. Discover a range of exclusive products delivered with ease.</p>
-            <button className="w-[150px] py-[8px] rounded-xl bg-gray-500">Explore</button>
+            <Link href={"/items"}><button className="w-[150px] py-[8px] rounded-xl bg-gray-500">Explore</button></Link>
           </div>
           <Image  src={"/boxgift-bgrem.png"} width={200} height={200} alt="box"/>
         </div>

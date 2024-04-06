@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import Image from 'next/image'
 
-function Item () {
+
+export default function Item ({ item }) {
+  console.log("query:", item)
   const [step, setStep] = useState(1)
   return (
     <main className='px-[150px] py-[100px]'>
@@ -53,4 +55,13 @@ function Item () {
   )
 }
 
-export default Item
+
+export async function getServerSideProps({query}) {
+  const { item } = query;
+
+  return {
+    props: {
+      item,
+    }
+  };
+}

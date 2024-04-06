@@ -1,8 +1,10 @@
 import { ThirdwebProvider } from "@thirdweb-dev/react";
 import {createWeb3Modal, defaultWagmiConfig} from '@web3modal/wagmi/react'
 import {WagmiConfig} from 'wagmi'
-import {arbitrum} from 'wagmi/chains'
-import {ToastContainer} from 'react-toastify'
+import {arbitrumSepolia} from 'wagmi/chains'
+// import {ToastContainer} from 'react-toastify'
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 import "@/styles/globals.css";
 import Layout from "@/Components/Layout";
 
@@ -17,7 +19,7 @@ const metadata = {
   icons: ['https://avatars.githubusercontent.com/u/37784886']
 }
 
-const chains = [arbitrum]
+const chains = [arbitrumSepolia]
 const wagmiConfig = defaultWagmiConfig({ chains, projectId, metadata })
 
 // 3. Create modal
@@ -27,18 +29,19 @@ createWeb3Modal({ wagmiConfig, projectId, chains,
   '--w3m-accent': '#F30029',
   '--w3m-border-radius-master': '10px',
 } })
-
+// const clientId = process.env.Client_Id
+const clientId = "9ba50b86c0dc2b49b1ee093b8c6a19f4"
 export default function App({ Component, pageProps }) {
-  const clientId = process.env.Client_Id
+  
   return<>
+  <ThirdwebProvider clientId={clientId} activeChain="arbitrum">
    <WagmiConfig config={wagmiConfig}>
-      <ThirdwebProvider clientId={clientId} activeChain="arbitrum">
         <Layout>
           <Component {...pageProps} />
           <ToastContainer/>
         </Layout>  
-      </ThirdwebProvider>
     </WagmiConfig>
+  </ThirdwebProvider>
   </>
 
 }

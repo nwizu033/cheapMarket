@@ -20,7 +20,7 @@ const Navbar = () => {
             </div>
             <div className="flex items-center gap-[30px] text-[20px] font-medium">
                 <Link href={"/donate"}>Donate</Link>
-                <Link href={"/item/item"}>Bid Items</Link>
+                <Link href={"/items/"}>Bid Items</Link>
                 <Link href={"/"}>Courier</Link>
                 <w3m-button balance="show" size="sm" />
             </div>

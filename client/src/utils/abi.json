@@ -1,0 +1,1071 @@
+[
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_token",
+				"type": "address"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"inputs": [],
+		"name": "CheapMarket__AlreadyACourier",
+		"type": "error"
+	},
+	{
+		"inputs": [],
+		"name": "CheapMarket__AlreadyADonor",
+		"type": "error"
+	},
+	{
+		"inputs": [],
+		"name": "CheapMarket__AlreadyAReceiver",
+		"type": "error"
+	},
+	{
+		"inputs": [],
+		"name": "CheapMarket__AlreadyEntered",
+		"type": "error"
+	},
+	{
+		"inputs": [],
+		"name": "CheapMarket__AlreadyPickedItem",
+		"type": "error"
+	},
+	{
+		"inputs": [],
+		"name": "CheapMarket__AlreadyPickedWinner",
+		"type": "error"
+	},
+	{
+		"inputs": [],
+		"name": "CheapMarket__BannedCourier",
+		"type": "error"
+	},
+	{
+		"inputs": [],
+		"name": "CheapMarket__BannedDonor",
+		"type": "error"
+	},
+	{
+		"inputs": [],
+		"name": "CheapMarket__BannedReceiver",
+		"type": "error"
+	},
+	{
+		"inputs": [],
+		"name": "CheapMarket__CourierPickedAlready",
+		"type": "error"
+	},
+	{
+		"inputs": [],
+		"name": "CheapMarket__NoCourierBidYet",
+		"type": "error"
+	},
+	{
+		"inputs": [],
+		"name": "CheapMarket__NoCourierPicked",
+		"type": "error"
+	},
+	{
+		"inputs": [],
+		"name": "CheapMarket__NoWinnerYet",
+		"type": "error"
+	},
+	{
+		"inputs": [],
+		"name": "CheapMarket__NotACourier",
+		"type": "error"
+	},
+	{
+		"inputs": [],
+		"name": "CheapMarket__NotADonor",
+		"type": "error"
+	},
+	{
+		"inputs": [],
+		"name": "CheapMarket__NotAParticipant",
+		"type": "error"
+	},
+	{
+		"inputs": [],
+		"name": "CheapMarket__NotAReceiver",
+		"type": "error"
+	},
+	{
+		"inputs": [],
+		"name": "CheapMarket__NotAvailable",
+		"type": "error"
+	},
+	{
+		"inputs": [],
+		"name": "CheapMarket__NotPickedCourier",
+		"type": "error"
+	},
+	{
+		"inputs": [],
+		"name": "CheapMarket__NotTheWinner",
+		"type": "error"
+	},
+	{
+		"inputs": [],
+		"name": "CheapMarket__NotYetTime",
+		"type": "error"
+	},
+	{
+		"inputs": [],
+		"name": "CheapMarket__TimeNotElapsed",
+		"type": "error"
+	},
+	{
+		"inputs": [],
+		"name": "CheapMarket__TimePassed",
+		"type": "error"
+	},
+	{
+		"inputs": [],
+		"name": "CheapMarket__ZeroAddress",
+		"type": "error"
+	},
+	{
+		"inputs": [],
+		"name": "CMT",
+		"outputs": [
+			{
+				"internalType": "contract IERC20",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_itemId",
+				"type": "uint256"
+			}
+		],
+		"name": "CourierTimeElapsed",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_itemId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "_courierAddress",
+				"type": "address"
+			}
+		],
+		"name": "checkCourierEntered",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_itemId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "_receiverAddress",
+				"type": "address"
+			}
+		],
+		"name": "checkReceiverEntered",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_itemId",
+				"type": "uint256"
+			}
+		],
+		"name": "confirmDelivery",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_itemId",
+				"type": "uint256"
+			}
+		],
+		"name": "confirmationTimeElapsed",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_itemId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_charge",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_deliveryDeadline",
+				"type": "uint256"
+			}
+		],
+		"name": "courierBid",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_courierDetails",
+				"type": "string"
+			}
+		],
+		"name": "courierRegistration",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_itemDetails",
+				"type": "string"
+			}
+		],
+		"name": "donateItem",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_donorDetails",
+				"type": "string"
+			}
+		],
+		"name": "donorRegistration",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_itemId",
+				"type": "uint256"
+			}
+		],
+		"name": "enterRaffle",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getAllItems",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "string",
+						"name": "itemDetails",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "itemId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address payable",
+						"name": "itemDonor",
+						"type": "address"
+					},
+					{
+						"internalType": "address payable",
+						"name": "itemWinner",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "timeframe",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address payable[]",
+						"name": "bidders",
+						"type": "address[]"
+					},
+					{
+						"internalType": "address payable",
+						"name": "courier",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amountRaised",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "winnerPicked",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "courierPicked",
+						"type": "bool"
+					},
+					{
+						"internalType": "uint256",
+						"name": "deliveryDeadline",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "confirmationDeadline",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "itemPicked",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "delivered",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "deliveryConfirmed",
+						"type": "bool"
+					}
+				],
+				"internalType": "struct CheapMarket.Item[]",
+				"name": "",
+				"type": "tuple[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_courierAddress",
+				"type": "address"
+			}
+		],
+		"name": "getCourier",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "address payable",
+						"name": "courierAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "courierId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "int256",
+						"name": "courierRating",
+						"type": "int256"
+					},
+					{
+						"internalType": "string",
+						"name": "courierDetails",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "timesDelivered",
+						"type": "uint256"
+					}
+				],
+				"internalType": "struct CheapMarket.Courier",
+				"name": "",
+				"type": "tuple"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_itemId",
+				"type": "uint256"
+			}
+		],
+		"name": "getCourierBids",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "address payable",
+						"name": "courierAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "deliveryDeadline",
+						"type": "uint256"
+					}
+				],
+				"internalType": "struct CheapMarket.CourierBid[]",
+				"name": "",
+				"type": "tuple[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_DonorAddress",
+				"type": "address"
+			}
+		],
+		"name": "getDonor",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "address payable",
+						"name": "donorAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "donorId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "donorDetails",
+						"type": "string"
+					},
+					{
+						"internalType": "int256",
+						"name": "donorRating",
+						"type": "int256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "timesDonated",
+						"type": "uint256"
+					}
+				],
+				"internalType": "struct CheapMarket.Donor",
+				"name": "",
+				"type": "tuple"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_itemId",
+				"type": "uint256"
+			}
+		],
+		"name": "getItem",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "string",
+						"name": "itemDetails",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "itemId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address payable",
+						"name": "itemDonor",
+						"type": "address"
+					},
+					{
+						"internalType": "address payable",
+						"name": "itemWinner",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "timeframe",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address payable[]",
+						"name": "bidders",
+						"type": "address[]"
+					},
+					{
+						"internalType": "address payable",
+						"name": "courier",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amountRaised",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "winnerPicked",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "courierPicked",
+						"type": "bool"
+					},
+					{
+						"internalType": "uint256",
+						"name": "deliveryDeadline",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "confirmationDeadline",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "itemPicked",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "delivered",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "deliveryConfirmed",
+						"type": "bool"
+					}
+				],
+				"internalType": "struct CheapMarket.Item",
+				"name": "",
+				"type": "tuple"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_itemId",
+				"type": "uint256"
+			}
+		],
+		"name": "getItemTime",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_DonorAddress",
+				"type": "address"
+			}
+		],
+		"name": "getItemsDonatedByDonor",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "string",
+						"name": "itemDetails",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "itemId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address payable",
+						"name": "itemDonor",
+						"type": "address"
+					},
+					{
+						"internalType": "address payable",
+						"name": "itemWinner",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "timeframe",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address payable[]",
+						"name": "bidders",
+						"type": "address[]"
+					},
+					{
+						"internalType": "address payable",
+						"name": "courier",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amountRaised",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "winnerPicked",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "courierPicked",
+						"type": "bool"
+					},
+					{
+						"internalType": "uint256",
+						"name": "deliveryDeadline",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "confirmationDeadline",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "itemPicked",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "delivered",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "deliveryConfirmed",
+						"type": "bool"
+					}
+				],
+				"internalType": "struct CheapMarket.Item[]",
+				"name": "",
+				"type": "tuple[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_courierAddress",
+				"type": "address"
+			}
+		],
+		"name": "getItemsEnteredByCourier",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "string",
+						"name": "itemDetails",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "itemId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address payable",
+						"name": "itemDonor",
+						"type": "address"
+					},
+					{
+						"internalType": "address payable",
+						"name": "itemWinner",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "timeframe",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address payable[]",
+						"name": "bidders",
+						"type": "address[]"
+					},
+					{
+						"internalType": "address payable",
+						"name": "courier",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amountRaised",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "winnerPicked",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "courierPicked",
+						"type": "bool"
+					},
+					{
+						"internalType": "uint256",
+						"name": "deliveryDeadline",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "confirmationDeadline",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "itemPicked",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "delivered",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "deliveryConfirmed",
+						"type": "bool"
+					}
+				],
+				"internalType": "struct CheapMarket.Item[]",
+				"name": "",
+				"type": "tuple[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_receiverAddress",
+				"type": "address"
+			}
+		],
+		"name": "getItemsEnteredByReceiver",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "string",
+						"name": "itemDetails",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "itemId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address payable",
+						"name": "itemDonor",
+						"type": "address"
+					},
+					{
+						"internalType": "address payable",
+						"name": "itemWinner",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "timeframe",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address payable[]",
+						"name": "bidders",
+						"type": "address[]"
+					},
+					{
+						"internalType": "address payable",
+						"name": "courier",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amountRaised",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "winnerPicked",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "courierPicked",
+						"type": "bool"
+					},
+					{
+						"internalType": "uint256",
+						"name": "deliveryDeadline",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "confirmationDeadline",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "itemPicked",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "delivered",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "deliveryConfirmed",
+						"type": "bool"
+					}
+				],
+				"internalType": "struct CheapMarket.Item[]",
+				"name": "",
+				"type": "tuple[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_receiverAddress",
+				"type": "address"
+			}
+		],
+		"name": "getReceiver",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "address payable",
+						"name": "receiverAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "receiverId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "receiverDetails",
+						"type": "string"
+					},
+					{
+						"internalType": "int256",
+						"name": "receiverRating",
+						"type": "int256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "timesReceived",
+						"type": "uint256"
+					}
+				],
+				"internalType": "struct CheapMarket.Receiver",
+				"name": "",
+				"type": "tuple"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getTimeStamp",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_itemId",
+				"type": "uint256"
+			}
+		],
+		"name": "itemNotPickedFromDonor",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_itemId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_courierIndex",
+				"type": "uint256"
+			}
+		],
+		"name": "pickCourier",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_itemId",
+				"type": "uint256"
+			}
+		],
+		"name": "pickItemFromDonor",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_itemId",
+				"type": "uint256"
+			}
+		],
+		"name": "pickWinner",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_receiverDetails",
+				"type": "string"
+			}
+		],
+		"name": "receiverRegistration",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_itemId",
+				"type": "uint256"
+			}
+		],
+		"name": "tickDelivered",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	}
+]
